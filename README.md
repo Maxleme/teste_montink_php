@@ -15,9 +15,15 @@ composer install
 composer dump-autoload
 ```
 
-3. **Configure a conexão com o banco de dados**
-- Edite o arquivo `src/Config/config.php` e ajuste as informações de acesso:
-  - `host`, `port`, `dbname`, `user`, `password`
+3. **Configure a conexão com o banco de dados e phpmailer**
+- Faça uma copia do arquivo `.env.example` com o nome de `.env`
+```bash
+    cp .env.example .env
+```
+- Edite o arquivo `.env` e ajuste as informações de acesso:
+  - `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`
+  e as informações de Email
+  - `MAIL_HOST`, `MAIL_USERNAME`, `MAIL_PASSWORD`, `MAIL_PORT`, `MAIL_FROM`, `MAIL_FROM_NAME`, `MAIL_SECURE`
 
 4. **Crie as tabelas do banco de dados**
 ```bash

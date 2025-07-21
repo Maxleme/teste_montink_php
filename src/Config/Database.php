@@ -3,13 +3,14 @@ namespace App\Config;
 
 use PDO;
 use PDOException;
+use App\Config\Config;
 
 class Database {
     private static $instance = null;
     private $pdo;
 
     private function __construct() {
-        $config = require __DIR__ . '/config.php';
+        $config = Config::db();
         $dsn = "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};charset=utf8";
         try {
             $this->pdo = new PDO($dsn, $config['user'], $config['password']);

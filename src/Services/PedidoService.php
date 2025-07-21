@@ -6,6 +6,7 @@ use App\Services\PedidoServiceInterface;
 use App\Config\Database;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use App\Config\Config;
 
 class PedidoService implements PedidoServiceInterface {
     private $repo;
@@ -74,16 +75,17 @@ class PedidoService implements PedidoServiceInterface {
             $stmtUpdateEstoque->execute([$totalEstoque, $item['produto_id']]);
         }
         // Enviar e-mail de confirmação com PHPMailer
+        $mailCfg = Config::mail();
         $mail = new PHPMailer(true);
         try {
             $mail->isSMTP();
-            $mail->Host = '';
+            $mail->Host = $mailCfg['host'];
             $mail->SMTPAuth = true;
-            $mail->Username = '';
-            $mail->Password = '';
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = '';
-            $mail->setFrom('', 'Loja');
+            $mail->Username = $mailCfg['username'];
+            $mail->Password = $mailCfg['password'];
+            $mail->SMTPSecure = $mailCfg['secure'] === 'ssl' ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = $mailCfg['port'];
+            $mail->setFrom($mailCfg['from'], $mailCfg['from_name']);
             $mail->addAddress($email, $nome);
             $mail->isHTML(true);
             $mail->Subject = 'Confirmação do Pedido - Loja';
