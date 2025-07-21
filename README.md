@@ -34,16 +34,20 @@ php -S localhost:8000 -t public
 
 ## Observações
 - Para testar o webhook, envie um POST para `/webhook` com JSON contendo `id` e `status` do pedido.
-    exemplo: 
+    exemplo:
+    ```bash 
     {
         "id": 1,
         "status": "CANCELADO"
     }
+    ```
     ou 
+    ```bash
     {
         "id": 1,
         "status": "PAGO"
     }
+    ```
 - O layout utiliza Bootstrap 5 via CDN.
 - O autoload segue o padrão PSR-4.
 
