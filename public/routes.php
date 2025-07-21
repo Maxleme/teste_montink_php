@@ -1,0 +1,25 @@
+<?php
+// Definição de rotas amigáveis: 'rota' => ['Controller', 'acao', [param1, param2...]]
+return [
+    '' => ['Produto', 'index', []],
+    'produtos' => ['Produto', 'index', []],
+    'produto/cadastrar' => ['Produto', 'cadastrar', []],
+    'produto/create' => ['Produto', 'create', []],
+    'produto/editar' => ['Produto', 'editar', []],
+    'produto/update' => ['Produto', 'update', []],
+    'produto/comprar' => ['Produto', 'comprar', []],
+    'produto/addCarrinho' => ['Produto', 'addCarrinho', []],
+    'carrinho' => ['Carrinho', 'index', []],
+    'carrinho/finalizar' => ['Carrinho', 'finalizar', []],
+    'carrinho/salvarPedido' => ['Carrinho', 'salvarPedido', []],
+    'carrinho/aplicarCupom' => ['Carrinho', 'aplicarCupom', []],
+    'carrinho/remover' => ['Carrinho', 'remover', []],
+    'pedido' => ['Pedido', 'index', []],
+    'pedido/detalhes' => ['Pedido', 'detalhes', []],
+    'pedido/sucesso' => ['Pedido', 'sucesso', []],
+    'cupom' => ['Cupom', 'index', []],
+    'cupom/cadastrar' => ['Cupom', 'cadastrar', []],
+    'cupom/create' => ['Cupom', 'create', []],
+    'cupom/remover' => ['Cupom', 'remover', []],
+    'webhook' => ['Webhook', 'index', []],
+]; 
