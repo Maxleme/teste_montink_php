@@ -1,16 +1,16 @@
 <?php
 // Script para criar as tabelas do banco mvc_loja
 $config = [
-    'host' => 'localhost',
-    'port' => 3306,
-    'dbname' => 'mvc_loja',
-    'user' => 'root',
-    'password' => 'senha',
+    'host' => '',
+    'port' => '',
+    'dbname' => '',
+    'user' => '',
+    'password' => '',
 ];
 
 $sql = <<<SQL
-CREATE DATABASE IF NOT EXISTS mvc_loja;
-USE mvc_loja;
+CREATE DATABASE IF NOT EXISTS $config[dbname];
+USE $config[dbname];
 
 CREATE TABLE IF NOT EXISTS produtos (
     id INT AUTO_INCREMENT PRIMARY KEY,

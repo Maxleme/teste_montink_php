@@ -26,6 +26,8 @@ composer dump-autoload
   - `MAIL_HOST`, `MAIL_USERNAME`, `MAIL_PASSWORD`, `MAIL_PORT`, `MAIL_FROM`, `MAIL_FROM_NAME`, `MAIL_SECURE`
 
 4. **Crie as tabelas do banco de dados**
+- Edite o arquivo criar_tabelas.php com as informações 'host', 'port', 'dbname', 'user', 'password'
+- Rode o comando no terminal 
 ```bash
 php criar_tabelas.php
 ```
